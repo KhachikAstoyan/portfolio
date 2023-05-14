@@ -5,7 +5,7 @@ import { Section } from "./common/Section";
 import { SectionTitle } from "./common/SectionTitle";
 
 const inputClassName =
-	"bg-neutral-900 outline-none border-2 border-transparent focus:border-indigo-700 transition-colors p-2 px-4 rounded w-full";
+	"bg-neutral-950 outline-none border-2 border-transparent focus:border-indigo-700 transition-colors p-2 px-4 rounded w-full";
 
 enum EmailSentStatus {
 	Loading,
