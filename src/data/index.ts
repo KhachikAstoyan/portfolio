@@ -24,7 +24,7 @@ export default {
 	role: "Full-Stack Developer",
 	title: "Khachik Astoyan - Full-Stack Developer",
 	description:
-		"Hey! I am a full-stack developer specialising in React, Node.js, and TypeScript. I am currently pursuing a Bachelor's degree in Computer Science at the American University of Armenis.",
+		"Hey! I am a full-stack developer specialising in React, Node.js, and TypeScript. I am currently pursuing a Bachelor's degree in Computer Science at the American University of Armenia.",
 	skills: [
 		{
 			name: "React",
