@@ -42,10 +42,6 @@ export default {
 			name: "PostgreSQL",
 			icon: "postgresql.svg",
 		},
-		{
-			name: "Docker",
-			icon: "docker.png",
-		},
 	] as Skill[],
 	projects: [
 		{
