@@ -8,61 +8,63 @@ import { Metadata } from "next";
 import data from "../data";
 
 export const metadata: Metadata = {
-	title: data.title,
-	description: data.description,
-	creator: data.name,
-	icons: [
-		{
-			url: "/icon.ico",
-			sizes: "32x32",
-			type: "image/x-icon",
-		},
-		{
-			url: "/icon.ico",
-			sizes: "16x16",
-			type: "image/x-icon",
-		},
-		{
-			url: "/icon.ico",
-			sizes: "48x48",
-			type: "image/x-icon",
-		},
-		{
-			url: "/icon.ico",
-			sizes: "64x64",
-			type: "image/x-icon",
-		},
-		{
-			url: "/icon.ico",
-			sizes: "128x128",
-			type: "image/x-icon",
-		},
-		{
-			url: "/icon.ico",
-			sizes: "256x256",
-			type: "image/x-icon",
-		},
-	],
-	keywords: ["portfolio", "developer", "software", "engineer", "fullstack"]
-		.concat(data.skills.map((skill) => skill.name))
-		.concat(data.projects.map((project) => project.name))
-		.concat(data.name),
-	openGraph: {
-		title: data.title,
-		description: data.description,
-		locale: "en_US",
-		siteName: data.title,
-		type: "website",
-	},
+  title: data.title,
+  description: data.description,
+  creator: data.name,
+  icons: [
+    {
+      url: "/icon.ico",
+      sizes: "32x32",
+      type: "image/x-icon",
+    },
+    {
+      url: "/icon.ico",
+      sizes: "16x16",
+      type: "image/x-icon",
+    },
+    {
+      url: "/icon.ico",
+      sizes: "48x48",
+      type: "image/x-icon",
+    },
+    {
+      url: "/icon.ico",
+      sizes: "64x64",
+      type: "image/x-icon",
+    },
+    {
+      url: "/icon.ico",
+      sizes: "128x128",
+      type: "image/x-icon",
+    },
+    {
+      url: "/icon.ico",
+      sizes: "256x256",
+      type: "image/x-icon",
+    },
+  ],
+  keywords: ["portfolio", "developer", "software", "engineer", "fullstack"]
+    .concat(data.skills.map((skill) => skill.name))
+    .concat(data.projects.map((project) => project.name))
+    .concat(data.name),
+  openGraph: {
+    title: data.title,
+    description: data.description,
+    locale: "en_US",
+    siteName: data.title,
+    type: "website",
+  },
 };
 
 export default function Home() {
-	return (
-		<Container>
-			<Hero />
-			<About />
-			<Projects />
-			<Contact />
-		</Container>
-	);
+  return (
+    <div className="light">
+      <Container>
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </Container>
+    </div>
+  );
 }
