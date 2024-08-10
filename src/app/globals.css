@@ -9,3 +9,7 @@ body {
 :root {
   font-size: 15px;
 }
+
+::selection {
+  @apply bg-indigo-600 text-neutral-50;
+}
