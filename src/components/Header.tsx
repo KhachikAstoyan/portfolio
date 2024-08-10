@@ -3,7 +3,7 @@ import { Container } from "./common/Container";
 
 const MenuItem: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <li className="text-gray-500 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-500 md:text-xl">
+    <li className="text-neutral-500 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-500 md:text-lg">
       {children}
     </li>
   );
@@ -17,6 +17,9 @@ export const Header = () => {
         <ul className="flex justify-around gap-3">
           <MenuItem>
             <a href="#about">About</a>
+          </MenuItem>
+          <MenuItem>
+            <a href="#experience">Experience</a>
           </MenuItem>
           <MenuItem>
             <a href="#projects">Projects</a>

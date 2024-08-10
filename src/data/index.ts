@@ -7,7 +7,10 @@ export interface Project {
   name: string;
   description: string;
   technologies: string[];
-  img: string;
+  img: {
+    src: string;
+    isDark: boolean;
+  };
   links: {
     github?: string;
     website?: string;
@@ -77,6 +80,26 @@ export default {
   ] as Skill[],
   projects: [
     {
+      name: "Quandry",
+      description:
+        "A platform for solving algorithmic problems and preparing for technical interviews.",
+      technologies: [
+        "Golang",
+        "Rust",
+        "RabbitMQ",
+        "React",
+        "PostgreSQL",
+        "Docker",
+      ],
+      links: {
+        github: "https://github.com/KhachikAstoyan/rce",
+      },
+      img: {
+        src: "/quandry.png",
+        isDark: false,
+      },
+    },
+    {
       name: "Typo.io",
       description:
         "A typing test website heavily inspired by monkeytype, built for learning purposes.",
@@ -88,13 +111,16 @@ export default {
         "NextJS",
         "Prisma",
       ],
-      img: "/typo.png",
+      img: {
+        src: "/typo.png",
+        isDark: true,
+      },
       links: {
         github: "https://github.com/KhachikAstoyan/typo",
         website: "https://typox.vercel.app/",
       },
     },
-  ] as Project[],
+  ] satisfies Project[],
   links: [
     {
       icon: "/github.svg",

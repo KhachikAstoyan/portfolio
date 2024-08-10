@@ -6,6 +6,7 @@ import { Hero } from "../components/Hero";
 import { Projects } from "../components/Projects";
 import { Metadata } from "next";
 import data from "../data";
+import { Experience } from "../components/Experience";
 
 export const metadata: Metadata = {
   title: data.title,
@@ -62,6 +63,7 @@ export default function Home() {
       <Container>
         <Hero />
         <About />
+        <Experience />
         <Projects />
         <Contact />
       </Container>
