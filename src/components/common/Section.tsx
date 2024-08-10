@@ -29,7 +29,6 @@ export const Section: React.FC<
 
   return (
     <>
-      <div id={id} className="block relative top-[-80px] invisible"></div>
       {/* @ts-ignore */}
       <motion.section
         {...props}
@@ -39,6 +38,7 @@ export const Section: React.FC<
         variants={variants}
         className={`my-20 relative ${className}`}
       >
+        <div id={id} className="block relative top-[-100px] invisible"></div>
         {children}
       </motion.section>
     </>

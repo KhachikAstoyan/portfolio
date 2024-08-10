@@ -11,9 +11,9 @@ const MenuItem: React.FC<React.PropsWithChildren> = ({ children }) => {
 
 export const Header = () => {
   return (
-    <header className="fixed w-full flex dark:bg-neutral-950 border-stone-900 border-b z-10 bg-opacity-70 backdrop-blur-md justify-between py-5 px-12 ">
+    <header className="fixed w-full flex dark:bg-neutral-950 border-stone-900 border-b z-10 bg-opacity-70 backdrop-blur-md justify-between py-5 px-5 md:px-12 ">
       <h1 className="font-bold text-md md:text-xl">Khachik Astoyan</h1>
-      <nav>
+      <nav className="flex items-center">
         <ul className="flex justify-around gap-3">
           <MenuItem>
             <a href="#about">About</a>
