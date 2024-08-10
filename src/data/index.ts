@@ -24,10 +24,10 @@ export interface Link {
 
 export default {
   name: "Khachik Astoyan",
-  role: "Full-Stack Developer",
-  title: "Khachik Astoyan - Full-Stack Developer",
+  role: "Software Engineer",
+  title: "Khachik Astoyan - Software Engineer",
   description:
-    "Hey! I am a full-stack developer specialising in React, Node.js, and TypeScript. I am currently pursuing a Bachelor's degree in Computer Science at the American University of Armenia.",
+    "Hey! I am a software engineer at Grid Dynamics. I am currently pursuing a Bachelor's degree in Computer Science at the American University of Armenia.",
   skills: [
     {
       name: "React",
@@ -126,5 +126,5 @@ export default {
       icon: "/github.svg",
       url: "https://github.com/KhachikAstoyan",
     },
-  ] as Link[],
+  ] satisfies Link[],
 };
