@@ -3,7 +3,7 @@ import { Container } from "./common/Container";
 
 const MenuItem: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <li className="text-neutral-500 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-500 md:text-lg">
+    <li className="text-neutral-400 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-500 md:text-lg">
       {children}
     </li>
   );
