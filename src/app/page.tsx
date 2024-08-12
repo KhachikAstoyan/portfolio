@@ -56,23 +56,21 @@ export const metadata: Metadata = {
     siteName: data.title,
     type: "website",
   },
+  alternates: {
+    canonical: data.links.self,
+  },
 };
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <link rel="canonical" href="https://kastoyan.com" key="canonical" />
-      </Head>
-      <div className="light">
-        <Container>
-          <Hero />
-          <About />
-          <Experience />
-          <Projects />
-          <Contact />
-        </Container>
-      </div>
-    </>
+    <div className="light">
+      <Container>
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+      </Container>
+    </div>
   );
 }

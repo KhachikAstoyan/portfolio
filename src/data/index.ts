@@ -121,10 +121,8 @@ export default {
       },
     },
   ] satisfies Project[],
-  links: [
-    {
-      icon: "/github.svg",
-      url: "https://github.com/KhachikAstoyan",
-    },
-  ] satisfies Link[],
+  links: {
+    self: "https://kastoyan.com",
+    github: "https://github.com/KhachikAstoyan",
+  },
 };
