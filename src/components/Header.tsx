@@ -53,9 +53,15 @@ export const Header = () => {
             <a href="#contact">Contact</a>
           </MenuItem>
           <MenuItem>
-            <ExternalLinkIcon className="h-5 text-indigo-400" />
+            <ExternalLinkIcon className="h-5 text-indigo-300" />
             <a href={data.links.github} target="_blank" rel="noreferrer">
               Github
+            </a>
+          </MenuItem>
+          <MenuItem>
+            <ExternalLinkIcon className="h-5 text-indigo-300" />
+            <a href="/cv.pdf" target="_blank" rel="noreferrer">
+              CV
             </a>
           </MenuItem>
         </ul>
