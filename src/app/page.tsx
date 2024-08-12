@@ -7,6 +7,7 @@ import { Projects } from "../components/Projects";
 import { Metadata } from "next";
 import data from "../data";
 import { Experience } from "../components/Experience";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: data.title,
@@ -59,14 +60,19 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="light">
-      <Container>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-      </Container>
-    </div>
+    <>
+      <Head>
+        <link rel="canonical" href="https://kastoyan.com" key="canonical" />
+      </Head>
+      <div className="light">
+        <Container>
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </Container>
+      </div>
+    </>
   );
 }
