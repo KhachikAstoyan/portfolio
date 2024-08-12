@@ -80,7 +80,7 @@ export default {
   ] as Skill[],
   projects: [
     {
-      name: "Quandry",
+      name: "Code Execution Engine",
       description:
         "A platform for solving algorithmic problems and preparing for technical interviews.",
       technologies: [
