@@ -4,7 +4,7 @@ import data from "../data";
 
 const MenuItem: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <li className="text-neutral-400 flex items-center gap-1 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-500 md:text-lg">
+    <li className="text-neutral-400 flex items-center gap-1 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-400 md:text-lg">
       {children}
     </li>
   );
@@ -31,6 +31,16 @@ const ExternalLinkIcon: React.FC<React.SVGAttributes<HTMLOrSVGElement>> = (
         />
       </g>
     </svg>
+  );
+};
+
+const HamburgerIcon = () => {
+  return (
+    <div className="flex flex-col gap-2 w-8 h-8 items-end justify-center">
+      <div className="w-full bg-red-400 rounded h-[2px]"></div>
+      <div className="w-2/3 bg-red-400 rounded h-[2px]"></div>
+      <div className="w-full bg-red-400 rounded h-[2px]"></div>
+    </div>
   );
 };
 
