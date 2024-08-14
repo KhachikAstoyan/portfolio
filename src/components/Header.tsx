@@ -107,11 +107,11 @@ export const Header = () => {
         className={clsx(
           "flex items-center transition",
           navDesktopClasses,
-          navMobileClasses,
-          {
-            [navMobileOpenClasses]: isMobileMenuOpen,
-          }
+          navMobileClasses
         )}
+        style={
+          isMobileMenuOpen ? { transform: "translateX(0)", opacity: 1 } : {}
+        }
       >
         <ul className="flex justify-around gap-3 flex-col md:flex-row items-center">
           <MenuItem>
