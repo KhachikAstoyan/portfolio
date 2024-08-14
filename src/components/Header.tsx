@@ -1,10 +1,13 @@
+"use client";
 import React from "react";
 import { Container } from "./common/Container";
 import data from "../data";
+import clsx from "clsx";
+import { cn } from "../lib/utils";
 
 const MenuItem: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <li className="text-neutral-400 flex items-center gap-1 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-400 md:text-lg">
+    <li className="text-neutral-400 text-2xl flex items-center gap-1 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-400 md:text-lg">
       {children}
     </li>
   );
@@ -34,22 +37,83 @@ const ExternalLinkIcon: React.FC<React.SVGAttributes<HTMLOrSVGElement>> = (
   );
 };
 
-const HamburgerIcon = () => {
+const HamburgerLine: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  ...props
+}) => {
   return (
-    <div className="flex flex-col gap-2 w-8 h-8 items-end justify-center">
-      <div className="w-full bg-red-400 rounded h-[2px]"></div>
-      <div className="w-2/3 bg-red-400 rounded h-[2px]"></div>
-      <div className="w-full bg-red-400 rounded h-[2px]"></div>
-    </div>
+    <div
+      className={cn(
+        "w-full bg-neutral-300 transition rounded relative h-[2px]",
+        className
+      )}
+      {...props}
+    ></div>
   );
 };
 
+type HamburgerIconProps = React.HTMLAttributes<HTMLButtonElement> & {
+  open: boolean;
+};
+
+const HamburgerIcon: React.FC<HamburgerIconProps> = ({
+  className,
+  open,
+  ...props
+}) => {
+  return (
+    <button
+      className={`flex flex-col gap-2 w-8 h-8 items-end justify-center ${className}`}
+      {...props}
+    >
+      <HamburgerLine
+        className={clsx({
+          "rotate-45 translate-y-[8px]": open,
+        })}
+      />
+      <HamburgerLine
+        className={clsx("w-2/3", {
+          "opacity-0": open,
+        })}
+      />
+      <HamburgerLine
+        className={clsx({
+          "-rotate-45 translate-y-[-11px]": open,
+        })}
+      />
+    </button>
+  );
+};
+
+const navDesktopClasses =
+  "md:static md:w-auto md:h-auto md:translate-x-0 md:opacity-100 md:justify-start md:transform-none";
+const navMobileClasses =
+  "absolute top-0 left-0 w-full bg-neutral-950 translate-x-full opacity-0 h-screen flex-col justify-center items-center";
+const navMobileOpenClasses = "translate-x-0 opacity-100 ";
+
 export const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  console.log(isMobileMenuOpen);
+
   return (
     <header className="z-50 fixed w-full flex dark:bg-neutral-950 border-stone-900 border-b bg-opacity-70 backdrop-blur-md justify-between py-5 px-5 md:px-12 ">
       <h1 className="font-bold text-md md:text-xl">Khachik Astoyan</h1>
-      <nav className="flex items-center">
-        <ul className="flex justify-around gap-3">
+      <HamburgerIcon
+        open={isMobileMenuOpen}
+        onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+        className="md:hidden z-[70]"
+      />
+      <nav
+        className={clsx(
+          "flex items-center transition",
+          navDesktopClasses,
+          navMobileClasses,
+          {
+            [navMobileOpenClasses]: isMobileMenuOpen,
+          }
+        )}
+      >
+        <ul className="flex justify-around gap-3 flex-col md:flex-row items-center">
           <MenuItem>
             <a href="#about">About</a>
           </MenuItem>
