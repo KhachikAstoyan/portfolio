@@ -21,7 +21,10 @@ export const About = () => {
 
             <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-4 gap-2">
               {data.skills.map((skill) => (
-                <div className="flex flex-col gap-1 group bg-neutral-950-950 border border-neutral-900 hover:border-indigo-600 transition-colors rounded-lg aspect-square justify-center items-center">
+                <div
+                  key={skill.name}
+                  className="flex flex-col gap-1 group bg-neutral-950-950 border border-neutral-900 hover:border-indigo-600 transition-colors rounded-lg aspect-square justify-center items-center"
+                >
                   <Image
                     src={skill.icon}
                     alt={skill.name}

@@ -1,14 +1,21 @@
 "use client";
-import React from "react";
+import React, { useCallback } from "react";
 import { Container } from "./common/Container";
 import data from "../data";
 import clsx from "clsx";
 import { cn } from "../lib/utils";
 
-const MenuItem: React.FC<React.PropsWithChildren> = ({ children }) => {
+type MenuItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+const MenuItem: React.FC<MenuItemProps> = ({
+  children,
+  className,
+  ...props
+}) => {
   return (
     <li className="text-neutral-400 text-2xl flex items-center gap-1 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-400 md:text-lg">
-      {children}
+      <a {...props} className={cn("flex items-center gap-2", className)}>
+        {children}
+      </a>
     </li>
   );
 };
@@ -88,12 +95,15 @@ const HamburgerIcon: React.FC<HamburgerIconProps> = ({
 const navDesktopClasses =
   "md:static md:w-auto md:h-auto md:translate-x-0 md:opacity-100 md:justify-start md:transform-none";
 const navMobileClasses =
-  "absolute top-0 left-0 w-full bg-neutral-950 translate-x-full opacity-0 h-screen flex-col justify-center items-center";
-const navMobileOpenClasses = "translate-x-0 opacity-100 ";
+  "absolute duration-200 top-0 left-0 w-full bg-neutral-950 translate-x-full opacity-0 h-screen flex-col justify-center items-center";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  console.log(isMobileMenuOpen);
+
+  const closeMobileMenu = useCallback(
+    () => setIsMobileMenuOpen(false),
+    [setIsMobileMenuOpen]
+  );
 
   return (
     <header className="z-50 fixed w-full flex dark:bg-neutral-950 border-stone-900 border-b bg-opacity-70 backdrop-blur-md justify-between py-5 px-5 md:px-12 ">
@@ -114,29 +124,35 @@ export const Header = () => {
         }
       >
         <ul className="flex justify-around gap-3 flex-col md:flex-row items-center">
-          <MenuItem>
-            <a href="#about">About</a>
+          <MenuItem onClick={closeMobileMenu} href="#about">
+            About
           </MenuItem>
-          <MenuItem>
-            <a href="#experience">Experience</a>
+          <MenuItem onClick={closeMobileMenu} href="#experience">
+            Experience
           </MenuItem>
-          <MenuItem>
-            <a href="#projects">Projects</a>
+          <MenuItem onClick={closeMobileMenu} href="#projects">
+            Projects
           </MenuItem>
-          <MenuItem>
-            <a href="#contact">Contact</a>
+          <MenuItem onClick={closeMobileMenu} href="#contact">
+            Contact
           </MenuItem>
-          <MenuItem>
+          <MenuItem
+            onClick={closeMobileMenu}
+            href={data.links.github}
+            target="_blank"
+            rel="noreferrer"
+          >
             <ExternalLinkIcon className="h-5 text-indigo-300" />
-            <a href={data.links.github} target="_blank" rel="noreferrer">
-              Github
-            </a>
+            Github
           </MenuItem>
-          <MenuItem>
+          <MenuItem
+            onClick={closeMobileMenu}
+            href="/cv.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
             <ExternalLinkIcon className="h-5 text-indigo-300" />
-            <a href="/cv.pdf" target="_blank" rel="noreferrer">
-              CV
-            </a>
+            CV
           </MenuItem>
         </ul>
       </nav>
