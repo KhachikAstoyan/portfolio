@@ -4,11 +4,11 @@ import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 const variants = {
-  hidden: { opacity: 0, x: -100 },
+  hidden: { opacity: 0, scale: 0.99 },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { delay: 0.1, duration: 0.5, type: "tween" },
+    scale: 1,
+    transition: { delay: 0.2, duration: 0.5, type: "tween" },
   },
 } as const;
 

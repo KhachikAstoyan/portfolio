@@ -9,9 +9,9 @@ export const Hero = () => {
     <section className="flex flex-col items-center justify-center min-h-screen py-2 relative bottom-5">
       <motion.div
         className="relative"
-        transition={{ duration: 0.7, type: "tween" }}
-        initial={{ bottom: "30px", opacity: 0 }}
-        animate={{ bottom: "0px", opacity: 1 }}
+        transition={{ duration: 0.5, type: "tween" }}
+        initial={{ transform: "scale(1.1)", opacity: 0 }}
+        animate={{ transform: "scale(1)", opacity: 1 }}
       >
         <Image
           className="rounded-full"
@@ -23,9 +23,9 @@ export const Hero = () => {
       </motion.div>
       <motion.div
         className="relative"
-        transition={{ duration: 0.7, type: "tween" }}
-        initial={{ top: "30px", opacity: 0 }}
-        animate={{ top: "0px", opacity: 1 }}
+        transition={{ duration: 0.5, type: "tween" }}
+        initial={{ top: "10px", transform: "scale(1.1)", opacity: 0 }}
+        animate={{ top: "0px", transform: "scale(1)", opacity: 1 }}
       >
         <h1 className="text-7xl font-bold my-3 text-center">Khachik Astoyan</h1>
         <p className="text-xl mt-1 text-gray-400 text-center">
