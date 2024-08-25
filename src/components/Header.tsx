@@ -93,7 +93,7 @@ const HamburgerIcon: React.FC<HamburgerIconProps> = ({
 };
 
 const navDesktopClasses =
-  "md:static md:w-auto md:h-auto md:translate-x-0 md:opacity-100 md:justify-start md:transform-none";
+  "md:static md:bg-transparent md:w-auto md:h-auto md:translate-x-0 md:opacity-100 md:justify-start md:transform-none";
 const navMobileClasses =
   "absolute duration-200 top-0 left-0 w-full bg-neutral-950 translate-x-full opacity-0 h-screen flex-col justify-center items-center";
 

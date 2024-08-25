@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { SectionTitle } from "./common/SectionTitle";
 import data from "../data";
 import { Section } from "./common/Section";
@@ -12,7 +11,9 @@ export const Projects = () => {
       <SectionTitle>Projects</SectionTitle>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-2">
         {data.projects.map((project) => (
-          <div
+          <a
+            href={project.links.website || project.links.github || undefined}
+            target="_blank"
             key={project.name}
             className="break-normal mb-10 h-80 bg-center bg-cover relative rounded transition-colors border-2 border-neutral-800 hover:border-indigo-600"
             style={{ backgroundImage: `url(${project.img.src})` }}
@@ -60,7 +61,7 @@ export const Projects = () => {
                 )}
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </Section>
