@@ -14,6 +14,7 @@ export const Hero = () => {
         animate={{ transform: "scale(1)", opacity: 1 }}
       >
         <Image
+          priority={true}
           className="rounded-full"
           src="/avatar.png"
           alt="Khachik Astoyan"
