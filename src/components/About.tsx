@@ -23,7 +23,7 @@ export const About = () => {
               {data.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col gap-1 group bg-neutral-950-950 border border-neutral-900 hover:border-indigo-600 transition-colors rounded-lg aspect-square justify-center items-center"
+                  className="flex flex-col gap-1 bg-neutral-950-950 border border-neutral-900 rounded-lg aspect-square justify-center items-center"
                 >
                   <Image
                     src={skill.icon}
@@ -31,7 +31,7 @@ export const About = () => {
                     width={50}
                     height={50}
                   />
-                  <span className="text-zinc-500 group-hover:text-indigo-500">
+                  <span className="text-zinc-500">
                     {skill.name}
                   </span>
                 </div>

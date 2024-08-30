@@ -28,7 +28,7 @@ export default {
   title: "Khachik Astoyan - Software Engineer",
   description:
     `Hi, I'm Khachik Astoyan,\
-    a Software Engineer with a passion for building efficient, scalable applications.\
+    a Software Engineer with a passion for building efficient, scalable applications,\
     and tinkering with new technologies.\
     While pursuing a Computer Science degree, I’m constantly exploring and refining my skills.\
     Check out my projects to see what I’m up to!`,

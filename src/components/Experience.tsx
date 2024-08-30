@@ -33,7 +33,7 @@ export const Experience = () => {
             company: "Freelance",
             date: "April 2022 - May 2023",
             detailedText:
-              "Helped a small business to improve their Laravel and VueJS app for stock trading and divident tracking. Resolved bugs, implemented new features, and improved the overall performance of the app",
+              "Helped a small business to improve their Laravel and VueJS app for stock trading and dividend tracking. Resolved bugs, implemented new features, and improved the overall performance of the app",
           },
           {
             title: "Intern Frontend Developer",
