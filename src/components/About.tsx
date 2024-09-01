@@ -4,7 +4,6 @@ import Image from "next/image";
 import React from "react";
 import data from "../data";
 import { SectionTitle } from "./common/SectionTitle";
-import { motion } from "framer-motion";
 import { Section } from "./common/Section";
 
 export const About = () => {

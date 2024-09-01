@@ -64,6 +64,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="light">
+      <div id="modal"/>
       <Container>
         <Hero />
         <About />

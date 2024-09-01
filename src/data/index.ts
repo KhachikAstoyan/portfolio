@@ -3,7 +3,7 @@ export interface Skill {
   icon: string;
 }
 
-export interface Project {
+export interface IProject {
   name: string;
   description: string;
   technologies: string[];
@@ -124,7 +124,7 @@ export default {
         website: "https://typox.vercel.app/",
       },
     },
-  ] satisfies Project[],
+  ] satisfies IProject[],
   links: {
     self: "https://kastoyan.com",
     github: "https://github.com/KhachikAstoyan",
