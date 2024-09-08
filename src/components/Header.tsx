@@ -4,6 +4,7 @@ import { Container } from "./common/Container";
 import data from "../data";
 import clsx from "clsx";
 import { cn } from "../lib/utils";
+import { ThemeSwitcher } from "./common/ThemeSwitcher";
 
 type MenuItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -12,7 +13,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   ...props
 }) => {
   return (
-    <li className="text-neutral-400 text-2xl flex items-center gap-1 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-400 md:text-lg">
+    <li className="text-neutral-600 dark:text-neutral-400 text-2xl flex items-center gap-1 font-normal border-b-2 border-transparent transition-colors hover:border-indigo-600 hover:text-indigo-400 md:text-lg">
       <a {...props} className={cn("flex items-center gap-2", className)}>
         {children}
       </a>
@@ -21,7 +22,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
 };
 
 const ExternalLinkIcon: React.FC<React.SVGAttributes<HTMLOrSVGElement>> = (
-  props
+  props,
 ) => {
   return (
     <svg
@@ -51,8 +52,8 @@ const HamburgerLine: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       className={cn(
-        "w-full bg-neutral-300 transition rounded relative h-[2px]",
-        className
+        "w-full bg-neutral-500 dark:bg-neutral-300 transition rounded relative h-[2px]",
+        className,
       )}
       {...props}
     ></div>
@@ -95,19 +96,22 @@ const HamburgerIcon: React.FC<HamburgerIconProps> = ({
 const navDesktopClasses =
   "md:static md:bg-transparent md:w-auto md:h-auto md:translate-x-0 md:opacity-100 md:justify-start md:transform-none";
 const navMobileClasses =
-  "absolute duration-200 top-0 left-0 w-full bg-neutral-950 translate-x-full opacity-0 h-screen flex-col justify-center items-center";
+  "absolute duration-200 top-0 left-0 w-full bg-white dark:bg-neutral-950 translate-x-full opacity-0 h-screen flex-col justify-center items-center";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const closeMobileMenu = useCallback(
     () => setIsMobileMenuOpen(false),
-    [setIsMobileMenuOpen]
+    [setIsMobileMenuOpen],
   );
 
   return (
-    <header className="z-50 fixed w-full flex dark:bg-neutral-950 border-stone-900 border-b bg-opacity-70 backdrop-blur-md justify-between py-5 px-5 md:px-12 ">
-      <h1 className="font-bold text-md md:text-xl">Khachik Astoyan</h1>
+    <header className="z-50 fixed w-full flex bg-white dark:bg-neutral-950 dark:border-stone-900 border-b bg-opacity-35 dark:bg-opacity-70 backdrop-blur-md justify-between py-5 px-5 md:px-12 ">
+      <div className="flex items-center gap-2">
+        <ThemeSwitcher />
+        <h1 className="font-bold text-md md:text-xl">Khachik Astoyan</h1>
+      </div>
       <HamburgerIcon
         open={isMobileMenuOpen}
         onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -117,7 +121,7 @@ export const Header = () => {
         className={clsx(
           "flex items-center transition",
           navDesktopClasses,
-          navMobileClasses
+          navMobileClasses,
         )}
         style={
           isMobileMenuOpen ? { transform: "translateX(0)", opacity: 1 } : {}
@@ -142,7 +146,7 @@ export const Header = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <ExternalLinkIcon className="h-5 text-indigo-300" />
+            <ExternalLinkIcon className="h-5 text-indigo-700 dark:text-indigo-300" />
             Github
           </MenuItem>
           <MenuItem
@@ -151,7 +155,7 @@ export const Header = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <ExternalLinkIcon className="h-5 text-indigo-300" />
+            <ExternalLinkIcon className="h-5 text-indigo-700 dark:text-indigo-300" />
             CV
           </MenuItem>
         </ul>

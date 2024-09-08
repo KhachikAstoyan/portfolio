@@ -5,7 +5,7 @@ import { Section } from "./common/Section";
 import { SectionTitle } from "./common/SectionTitle";
 
 const inputClassName =
-  "bg-neutral-950 outline-none border-2 border-neutral-900 focus:border-indigo-700 transition-colors p-2 px-4 rounded w-full";
+  "dark:bg-neutral-950 outline-none border-2 dark:border-neutral-900 focus:border-indigo-400 dark:focus:border-indigo-700 transition-colors p-2 px-4 rounded w-full";
 
 enum EmailSentStatus {
   Loading,
@@ -79,7 +79,7 @@ export const Contact = () => {
         ></textarea>
 
         <div className="flex flex-col justify-center">
-          <button className="bg-indigo-900 hover:bg-indigo-700 p-3 px-6 mt-2 border-2 outline-none border-transparent transition-colors focus:border-indigo-500 rounded-md">
+          <button className="bg-indigo-500 text-white dark:bg-indigo-900 hover:bg-indigo-700 p-3 px-6 mt-2 border-2 outline-none border-transparent transition-colors focus:border-indigo-500 rounded-md">
             {emailSentStatus === EmailSentStatus.Loading
               ? "Sending..."
               : "Send"}

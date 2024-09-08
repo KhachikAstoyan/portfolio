@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export const Hero = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen py-2 relative bottom-5">
+    <section className="flex flex-col items-center justify-center relative h-[calc(100vh-100px)]">
       <motion.div
         className="relative"
         transition={{ duration: 0.5, type: "tween" }}
@@ -29,11 +29,11 @@ export const Hero = () => {
         animate={{ top: "0px", transform: "scale(1)", opacity: 1 }}
       >
         <h1 className="text-7xl font-bold my-3 text-center">Khachik Astoyan</h1>
-        <p className="text-xl mt-1 text-gray-400 text-center">
+        <p className="text-xl mt-1 text-gray-600 dark:text-gray-400 text-center">
           Software Engineer, CS student at{" "}
           <a
             href="https://aua.am/"
-            className="text-gray-300 underline"
+            className="text-gray-400 dark:text-gray-300 underline"
             target="_blank"
           >
             AUA

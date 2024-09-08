@@ -26,8 +26,7 @@ export default {
   name: "Khachik Astoyan",
   role: "Software Engineer",
   title: "Khachik Astoyan - Software Engineer",
-  description:
-    `Hi, I'm Khachik Astoyan,\
+  description: `Hi, I'm Khachik Astoyan,\
     a Software Engineer with a passion for building efficient, scalable applications,\
     and tinkering with new technologies.\
     While pursuing a Computer Science degree, I’m constantly exploring and refining my skills.\
@@ -86,7 +85,7 @@ export default {
     {
       name: "Quandry",
       description:
-        "A platform for solving algorithmic problems and preparing for technical interviews.",
+        "A platform for solving algorithmic problems and preparing for technical interviews. A platform for solving algorithmic problems and preparing for technical interviews. ",
       technologies: [
         "Golang",
         "Rust",

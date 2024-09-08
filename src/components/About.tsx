@@ -23,7 +23,7 @@ export const About = () => {
               {data.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col gap-1 bg-neutral-950-950 border border-neutral-900 rounded-lg aspect-square justify-center items-center"
+                  className="flex flex-col gap-1 dark:bg-neutral-950 border dark:border-neutral-900 rounded-lg aspect-square justify-center items-center"
                 >
                   <Image
                     src={skill.icon}

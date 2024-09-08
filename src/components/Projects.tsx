@@ -9,38 +9,44 @@ export const Projects = () => {
   return (
     <Section id="projects" className="relative">
       <SectionTitle>Projects</SectionTitle>
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-2">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
         {data.projects.map((project) => (
-          <a
-            href={project.links.website || project.links.github || undefined}
-            target="_blank"
+          <article
+            suppressHydrationWarning
             key={project.name}
-            className="break-normal mb-10 h-80 bg-center bg-cover relative rounded transition-colors border-2 border-neutral-800 hover:border-indigo-600"
-            style={{ backgroundImage: `url(${project.img.src})` }}
+            className="flex flex-col gap-2 border dark:border-neutral-800 shadow-sm rounded"
           >
+            <img
+              src={project.img.src}
+              alt={project.name}
+              className="top-0 left-0 w-full h-[200px] object-cover rounded-t"
+            />
             <div
-              className={`z-0 w-full h-full absolute top-0 left-0 bg-black ${
-                project.img.isDark ? "opacity-50" : "opacity-85"
-              }`}
-            ></div>
-            <div
-              className={`z-10 absolute w-full h-full bottom-0 p-5 flex flex-col justify-end break-words bg-opacity-70`}
+              className={`z-10 w-full p-5 flex flex-col gap-3 h-full justify-between`}
             >
-              <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
-              <p className="text-gray-500 mb-2 break-words">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-gray-500 bg-zinc-900 p-1 rounded text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div>
+                <a
+                  target="_blank"
+                  href={project.links.website || project.links.github}
+                  className="block mb-3 text-2xl font-bold hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                >
+                  {project.name}
+                </a>
+                <p className="text-neutral-500 dark:text-neutral-400  mb-2 break-words">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-black dark:text-neutral-500 bg-zinc-100 border dark:border-zinc-800 dark:bg-zinc-900 py-[1px] px-2 rounded text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 justify-self-end">
                 {project.links.github && (
                   <a
                     href={project.links.github}
@@ -61,7 +67,7 @@ export const Projects = () => {
                 )}
               </div>
             </div>
-          </a>
+          </article>
         ))}
       </div>
     </Section>
