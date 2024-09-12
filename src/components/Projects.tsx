@@ -12,7 +12,6 @@ export const Projects = () => {
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
         {data.projects.map((project) => (
           <article
-            suppressHydrationWarning
             key={project.name}
             className="flex flex-col gap-2 border dark:border-neutral-800 shadow-sm rounded"
           >

@@ -7,7 +7,6 @@ import { Projects } from "../components/Projects";
 import { Metadata } from "next";
 import data from "../data";
 import { Experience } from "../components/Experience";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: data.title,
