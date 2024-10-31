@@ -30,14 +30,7 @@ export const Hero = () => {
       >
         <h1 className="text-7xl font-bold my-3 text-center">Khachik Astoyan</h1>
         <p className="text-xl mt-1 text-gray-600 dark:text-gray-400 text-center">
-          Software Engineer, CS student at{" "}
-          <a
-            href="https://aua.am/"
-            className="text-gray-400 dark:text-gray-300 underline"
-            target="_blank"
-          >
-            AUA
-          </a>
+          Software Engineer
         </p>
       </motion.div>
     </section>
