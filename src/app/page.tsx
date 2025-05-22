@@ -68,7 +68,6 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
-        <Contact />
       </Container>
     </div>
   );
